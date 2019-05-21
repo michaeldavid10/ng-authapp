@@ -4,7 +4,7 @@
       <li class="menu-text">AuthApp</li>
       <li routerLinkActive="is-active"><a [routerLink]="['home']">Inicio</a></li>
       <li routerLinkActive="is-active"><a [routerLink]="['precios']">Precios</a></li>
-      <li routerLinkActive="is-active"><a [routerLink]="['protegida']">Protegida</a></li>
+      <li *ngIf="auth.isAuthenticated()" routerLinkActive="is-active"><a [routerLink]="['protegida']">Protegida</a></li>
     </ul>
   </div>
   <div class="top-bar-right">
