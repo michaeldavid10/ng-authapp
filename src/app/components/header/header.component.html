@@ -9,7 +9,8 @@
   </div>
   <div class="top-bar-right">
     <ul class="menu">
-      <li><button (click)="login()" class="button">Login</button></li>
+      <li *ngIf="!auth.isAuthenticated()"><button (click)="login()" class="hollow button">Ingresar</button></li>
+      <li *ngIf="auth.isAuthenticated()"><button (click)="logout()" class="hollow button">Salir</button></li>
     </ul>
   </div>
 </div>

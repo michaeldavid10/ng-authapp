@@ -8,13 +8,19 @@ import {AuthService} from '../../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor( private auth:AuthService) { }
+  constructor( private auth:AuthService) {
+    auth.handleAuthentication();
+  }
 
   ngOnInit() {
   }
 
   login() {
     this.auth.login();
+  }
+
+  logout() {
+    this.auth.logout();
   }
 
 }
